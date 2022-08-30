@@ -16,7 +16,7 @@ class ContactUsController extends Controller
      */
     public function index()
     {
-        //
+        return new ContactUsResource(ContactUs::all(), 200);
     }
 
     /**

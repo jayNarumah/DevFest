@@ -16,7 +16,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        return new ProjectResource(Project::all(), 200);
     }
 
     /**
@@ -61,17 +61,6 @@ class ProjectController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Project  $project
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Project $project)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateProjectRequest  $request
@@ -80,7 +69,13 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $project->team = $request->team;
+        $project->leader = $request->leader;
+        $project->phone_number = $request->phone_number;
+        $project->email = $request->email;
+        $project->project_title = $request->project_title;
+        $project->project_description = $request->project_description;
+        $project->save();
     }
 
     /**
@@ -91,6 +86,6 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
     }
 }
