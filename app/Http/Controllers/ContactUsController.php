@@ -44,7 +44,7 @@ class ContactUsController extends Controller
             'subject' => $request->subject,
         ]);
 
-        return new ContactUsResource($contactUs, 201);
+        return redirect('https://gdggusaudevfest.netlify.app', 201);
     }
 
     /**

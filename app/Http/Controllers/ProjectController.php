@@ -46,7 +46,7 @@ class ProjectController extends Controller
             'project_description' => $request->project_description,
         ]);
 
-        return new projectResource($project, 201);
+        return redirect('https://gdggusaudevfest.netlify.app', 201);
     }
 
     /**
